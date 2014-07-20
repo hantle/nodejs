@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1=title
+  p Welcome to #{title}
+  for(method='post', action='')
+    .row
+      label.col-md-3#user user
+      input.col-md-9(name='user')
+      br
+      label.col-md-3 password
+      input.col-md-9(type='password' name='password')
+    .row
+      .col-xs-6.text-center
+        input.btn.btn-success(type='submit', value='login', style='width:90%; margin:10px auto')
+      .col-xs-6.text-center 
+        input.btn.btn-danger(type='submit', value='join', style='width:90%; margin:10px 10px')
+    br

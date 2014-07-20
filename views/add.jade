@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Add new blog post
+
+  form(name="add-post", method="post", action="/addpost")
+    .row
+      div
+        label Subject:
+      input(type="text", name="subject")
+    .row
+      div
+        label Content
+      textarea(name="body", rows="10", cols="30")
+    .row
+      input.btn.btn-success(type='submit', name='post', value="Post")

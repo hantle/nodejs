@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 
-var routes = require('./routes/index');
 var users = require('./routes/users');
 var db = require('./mongo.js');
 
@@ -24,15 +23,29 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+/*
 app.use('/', function(req, res) {
 	db.findOneUser({username:"admin"}, function(item) {
 		console.log(item);
 	});
 	res.render('index', { title: 'Express' });
 });
+*/
 app.use('/users', users);
 
+app.get('/login', function(req, res) {
+	res.render('login', {title:'LOGIN'});
+});
+
+app.post('/login', function(req, res) {
+	res.render('index', {title:'INDEX'});
+});
+
+app.get('/add', function(req, res) {
+    res.render('add', {title:'POST'});
+});
+
+//app.post()...
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
