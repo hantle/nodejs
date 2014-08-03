@@ -1,7 +1,7 @@
 var mongodb = require('mongodb');
 var mongoClient = mongodb.MongoClient;
 
-var db, User;
+var db, User, Post;
 
 exports.connect = function() {
 	mongoClient.connect('mongodb://127.0.0.1:27017/test',
@@ -9,6 +9,7 @@ exports.connect = function() {
 				if(err) throw err;
 				db = data;
 				User = db.collection('User');
+                Post = db.collection('Post');
 				console.log('db connected');
 			});
 
@@ -38,4 +39,20 @@ exports.findOneUser = function(query, callback) {
 	User.findOne(query, function(err, item) {
 		callback(item);
 	});
+};
+
+exports.addpost = function(value, callback) {
+    Post.insert(value, function(err, item) {
+        callback(err, item);
+    });
+};
+
+exports.findPost = function(query, callback) {
+    Post.find(query).sort({"createdDate":-1}).toArray(
+            function(err, posts) {
+                callback(err, posts);
+            });
+};
+
+exports.findPostList = function(query, callback) {
 };

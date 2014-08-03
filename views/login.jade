@@ -3,10 +3,10 @@ extends layout
 block content
   h1=title
   p Welcome to #{title}
-  for(method='post', action='')
+  form(method='post', action='')
     .row
-      label.col-md-3#user user
-      input.col-md-9(name='user')
+      label.col-md-3#user username
+      input.col-md-9(name='username')
       br
       label.col-md-3 password
       input.col-md-9(type='password' name='password')

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1 #{post.subject}
+
+    div.body #{post.body}
+    div Posted: #{moment(post.createdDate).format('LLL')}
+    div Posted by: #{post.author.username}
+
+    h2 User comments
+
+    - if (post.comments)
+      for comments in post.comments
+        div.comment
+          div #{comment.body}
+          div comment by #{comment.name}
+          div posted #{moment(comment.createdDate).fromNow()}
+    - else
+      div No comments added yet, be first.
+
+    h2 Add comment
+    form(name="add-comment", method="post", actipn="/post/comment")
+      input(type="hidden", name="id", value="#{post._id}")
+      div.row
+        div
+          label Name
+        input(type="text", name="name")
+      div.row
+        div
+          label Comment
+        textarea(name="comment", rows="10", cols="20")
+      div.row
+        input(type="submit", name="send", value="Comment")

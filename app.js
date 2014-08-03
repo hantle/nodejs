@@ -5,9 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
-
+var session = require('express-session');
 var users = require('./routes/users');
 var db = require('./mongo.js');
+var moment = require('moment');
 
 var app = express();
 
@@ -23,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret: 'secret'}));
+app.locals.moment = moment
 /*
 app.use('/', function(req, res) {
 	db.findOneUser({username:"admin"}, function(item) {
@@ -31,6 +34,20 @@ app.use('/', function(req, res) {
 	res.render('index', { title: 'Express' });
 });
 */
+
+app.get('/', function(req, res) {
+    var fields = {
+        subjedct: 1,
+        body: 1,
+        createdDate: 1,
+        author: 1
+    };
+    db.findPost({state: 'published'}, function(err, posts) {
+        if(!err && posts) {
+            res.render('index', {title:'INDEX', postList:posts});
+            }
+    });
+});
 app.use('/users', users);
 
 app.get('/login', function(req, res) {
@@ -38,14 +55,38 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', function(req, res) {
-	res.render('index', {title:'INDEX'});
+    req.session.user = req.body.username;
+    res.redirect('/');
 });
 
-app.get('/add', function(req, res) {
+app.get('/post/add', function(req, res) {
     res.render('add', {title:'POST'});
 });
 
-//app.post()...
+app.post('/post/add', function(req, res) {
+    var values = {
+        subject: req.body.subject,
+        body: req.body.body,
+        state: 'published',
+        createdDate: new Date(),
+        updatedDate: new Date(),
+        comments: [],
+        author: {
+            username: req.session.user
+        }
+    };
+
+    db.addpost(values, function(err, post) {
+        console.log(err, post);
+        res.redirect('/');
+    });
+});
+
+app.get('/post/:postid', function(req, res) {
+    res.render('show', {
+        title:'Showing Post - ' + req.post.subject, 
+        post : req.post});
+});
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
