@@ -1,11 +1,30 @@
 doctype html
 html
   head
-    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0', charset='utf-8')
-    meta(name="apple=mobile-web-app-capable", content="yes")
-
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
   body
-    block content
+    div#header
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .nav-inner
+          ul.nav.navbar-nav(role='menu')
+            li
+              a(href="#") HOME
+            li
+              a(href="#") BLOG
+            li
+              a(href="#") HELP
+            li
+              a(href="#") CONTACT
+    div#container
+      block content
+    div#footer
+      div Made by hantle
+      div
+        -if (user)
+          a(href='/logout') Logout #{user.user}
+          span |
+          a(href='/post/add') Add post
+        -else
+          a(href='/login') Login

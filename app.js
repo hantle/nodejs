@@ -9,7 +9,10 @@ var session = require('express-session');
 var users = require('./routes/users');
 var db = require('./mongo.js');
 var moment = require('moment');
-
+var crypto = require('crypto');
+var conf = {
+    salt: 'salt'
+}
 var app = express();
 
 db.connect();
@@ -35,6 +38,18 @@ app.use('/', function(req, res) {
 });
 */
 
+app.use(function(req, res, next) {
+    if(req.session.user) {
+        res.locals.user = req.session.user;
+        next();
+    } else {
+        if(req.originalUrl != '/login') {
+            res.redirect('/');
+        }
+        next();
+    }
+});
+
 app.get('/', function(req, res) {
     var fields = {
         subjedct: 1,
@@ -55,8 +70,33 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', function(req, res) {
-    req.session.user = req.body.username;
-    res.redirect('/');
+    var query = { 
+        username: req.body.username,
+        password: crypto.createHash('sha256').update(req.body.password
+            + conf.salt).digest('hex'),
+    }
+    if(req.body.login) {
+        db.findOneUser(query, function(err, user) {
+            if(err || !user) {
+                res.render('login', {title: 'LOGIN', 
+                    error: 'Nor user or wrong password'});
+            } else {
+                req.session.user = req.body.username;
+                res.redirect('/');
+            }
+        });
+    } else {
+        db.joinUser(query, function(err, user) {
+            if(err || !user) {
+                console.log('err :' + JSON.stringify(err));
+                console.log('user :' + JSON.stringify(user));
+                res.render('login', {title: 'LOGIN', 
+                    error: 'Cannot make new user'});
+            } else {
+                res.render('/login', {title:'LOGIN', error:'OK'});
+            }
+        });
+    }
 });
 
 app.get('/post/add', function(req, res) {
@@ -87,6 +127,12 @@ app.get('/post/:postid', function(req, res) {
         title:'Showing Post - ' + req.post.subject, 
         post : req.post});
 });
+
+app.get('/logout', function(req, res) {
+    res.session.destroy();
+    res.redirect('/login');
+});
+
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -37,8 +37,14 @@ exports.connect = function() {
 
 exports.findOneUser = function(query, callback) {
 	User.findOne(query, function(err, item) {
-		callback(item);
+		callback(err, item);
 	});
+};
+
+exports.joinUser = function(query, callback) {
+    User.insert(query, function(err, item) {
+        callback(err, item);
+    });
 };
 
 exports.addpost = function(value, callback) {

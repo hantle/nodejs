@@ -3,7 +3,10 @@ extends layout
 block content
   h1=title
   p Welcome to #{title}
-  form(method='post', action='')
+  -if (error) {
+    p=error
+  -}
+  form(method='post', action='/login')
     .row
       label.col-md-3#user username
       input.col-md-9(name='username')
@@ -12,7 +15,9 @@ block content
       input.col-md-9(type='password' name='password')
     .row
       .col-xs-6.text-center
-        input.btn.btn-success(type='submit', value='login', style='width:90%; margin:10px auto')
+        input.btn.btn-success(type='submit', value='login',
+                name='login', style='width:90%; margin:10px auto')
       .col-xs-6.text-center 
-        input.btn.btn-danger(type='submit', value='join', style='width:90%; margin:10px 10px')
+        input.btn.btn-danger(type='submit', value='join',
+                name='join', style='width:90%; margin:10px 10px')
     br
