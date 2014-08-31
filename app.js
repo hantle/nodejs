@@ -43,8 +43,8 @@ app.use(function(req, res, next) {
         res.locals.user = req.session.user;
         next();
     } else {
-        if(req.originalUrl != '/login') {
-            res.redirect('/');
+        if(req.originalUrl == '/login') {
+            res.redirect('/login');
         }
         next();
     }
