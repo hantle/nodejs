@@ -2,3 +2,4 @@ node_modules/
 mongodb/
 bower_components/
 *.swp
+*~
