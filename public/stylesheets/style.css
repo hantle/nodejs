@@ -12,233 +12,232 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form {
 }
 
 body {
-	background: #f6f5ee url(images/bg.png);
+	background: #f6f5ee url(../images/bg.png);
 	font: 14px/22px Helvetica, Sans-Serif;
 }
 
 #container {
-	background: url(images/top-bar.png) top repeat-x;
-	background: url(images/top-bar.png) top repeat-x, url(images/footer-top.png) botton repeat-x;
+	background: url(../images/top-bar.png) top repeat-x;
+	background: url(../images/top-bar.png) top repeat-x, url(../images/footer-top.png) botton repeat-x;
 	padding: 0 0 31px 0;
-
 }
 
 #header {
 	width: 961px; margin: 0 auto; position: relative;
 	overflow: hidden;
 }
-	#header h1 a {
-		position: absolute; top: 5px; left: 376px;display: block; width: 208px; height: 213px; 
-		background: url(images/logo.png); text-indent: -9999px;
-	}
-		#header h1 a:hover {
-			background-position: bottom;
-		}
+#header h1 a {
+	position: absolute; top: 5px; left: 376px;display: block; width: 208px; height: 213px; 
+	background: url(../images/logo.png); text-indent: -9999px;
+}
+#header h1 a:hover {
+	background-position: bottom;
+}
 	
-	#header ul#nav {
-		float: left; margin: 22px 0 0 24px; list-style: none;
-	}
-		#header ul#nav li {
-			float: left; margin: 0 0 0 45px;
-		}
-			#header ul#nav li:first-child {
-				margin: 0;
-			}
-				#header ul#nav li a {
-					display: block; font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
-					text-decoration: none;
-				}
-					#header ul#nav li a:hover {
-						color: #d0cfc8;
-					}
+#header ul#nav {
+	float: left; margin: 22px 0 0 24px; list-style: none;
+}
+#header ul#nav li {
+	float: left; margin: 0 0 0 45px;
+}
+#header ul#nav li:first-child {
+	margin: 0;
+}
+#header ul#nav li a {
+	display: block; font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
+	text-decoration: none;
+}
+#header ul#nav li a:hover {
+	color: #d0cfc8;
+}
 	
-	#header ul#subscribe {
-		float: right; margin: 22px 24px 0 0; list-style: none;
-	}
-		#header ul#subscribe li {
-			float: left; margin: 0 0 0 32px;
-		}
-			#header ul#subscribe li a {
-				display: block; height: 16px; font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
-				text-decoration: none; padding: 1px 0 0 27px;
-				background: url(images/icons.png) left 1px no-repeat;
-			}
-				#header ul#subscribe li.rss a {
-					background-position: left -16px;
-				}
-					#header ul#subscribe li a:hover {
-						color: #d0cfc8;
-					}
-				
-	#header h2 {
-		margin: 250px 0 0 0; min-width: 500px; clear: both; text-align: center;
-		background: url(images/top-divider.png) center bottom no-repeat; padding: 0 0 30px 0;
-		font: 24px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; 
-		text-shadow: 0px 1px 0px #fff;
-	}
+#header ul#subscribe {
+	float: right; margin: 22px 24px 0 0; list-style: none;
+}
+#header ul#subscribe li {
+	float: left; margin: 0 0 0 32px;
+}
+#header ul#subscribe li a {
+	display: block; height: 16px; font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
+	text-decoration: none; padding: 1px 0 0 27px;
+	background: url(../images/icons.png) left 1px no-repeat;
+}
+#header ul#subscribe li.rss a {
+	background-position: left -16px;
+}
+#header ul#subscribe li a:hover {
+	color: #d0cfc8;
+}
+			
+#header h2 {
+	margin: 250px 0 0 0; min-width: 500px; clear: both; text-align: center;
+	background: url(../images/top-divider.png) center bottom no-repeat; padding: 0 0 30px 0;
+	font: 24px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; 
+	text-shadow: 0px 1px 0px #fff;
+}
 
-#content {
+#container {
 	width: 917px; margin: -240px auto 0 auto; padding: 280px 22px 0 22px;
-	background: url(images/container-lines.png) repeat-y;
+	background: url(../images/container-lines.png) repeat-y;
 }	
 
-	#content #main {
-		width: 684px; float: left; 
-	}	
-		#content #main .post {
-			position: relative; margin: 0 0 60px 0; padding: 0 0 66px 0; overflow: hidden;
-			background: url(images/underline.png) bottom repeat-x;
-		}
-			#content #main .post h2 {
-				float: left; margin: 0 0 10px 75px;
-				font: 24px Lucida Grande, Lucida Sans Unicode, Helvetica, Sans-Serif; letter-spacing: normal;
-			}
-			#content #main .post p.date {
-				position: absolute; left: 0; top: 0; padding: 4px 7px 4px 7px; 
-				background: url(images/lines.png);
-				font: bold 40px Helvetica, Sans-Serif; color: #b6b6b1; text-align: center;
-			} 
-				#content #main .post p.date span {
-					font: normal 20px Helvetica, Sans-Serif;
-					display: block; margin: -5px 0 0 0; 
-				}
-			#content #main .post ul.meta {
-				float: left; list-style: none; margin: 0 0 30px 75px; overflow: hidden;
-				font: 16px Helvetica, Sans-Serif; color: #b6b6b1;
-			}
-				#content #main .post ul.meta li {
-					float: left; margin: 0 20px 0 0;
-				}
-					#content #main .post ul.meta li.comments {
-						padding: 0 0 0 32px; background: url(images/star.png) left center no-repeat;
-					}
-			#content #main .post .post-content {
-				clear: both;
-			}	
+#container #main {
+	width: 684px; float: left; 
+}	
+#container #main .post {
+	position: relative; margin: 0 0 60px 0; padding: 0 0 66px 0; overflow: hidden;
+	background: url(../images/underline.png) bottom repeat-x;
+}
+#container #main .post h2 {
+	float: left; margin: 0 0 10px 75px;
+	font: 24px Lucida Grande, Lucida Sans Unicode, Helvetica, Sans-Serif; letter-spacing: normal;
+}
+#container #main .post .post-time {
+	position: absolute; left: 0; top: 0; padding: 4px 7px 4px 7px; 
+	background: url(../images/lines.png);
+	font: bold 40px Helvetica, Sans-Serif; color: #b6b6b1; text-align: center;
+} 
+#container #main .post .post-time span {
+	font: normal 20px Helvetica, Sans-Serif;
+	display: block; margin: -5px 0 0 0; 
+}
+#container #main .post ul.meta {
+	float: left; list-style: none; margin: 0 0 30px 75px; overflow: hidden;
+	font: 16px Helvetica, Sans-Serif; color: #b6b6b1;
+}
+#container #main .post ul.meta li {
+	float: left; margin: 0 20px 0 0;
+}
+#container #main .post ul.meta li.comments {
+	padding: 0 0 0 32px; background: url(../images/star.png) left center no-repeat;
+}
+#container #main .post .post-content {
+	clear: both;
+}	
 	
 		
-			#content #main .pagination {
-				margin: 0 0 60px 0; overflow: hidden;
-			} 
-				#content #main .pagination p {
-					margin: 0;
-				}
-	
-			#content #main .pagination p a {
-				display: block; width: 102px; height: 33px; overflow: hidden;
-				background: url(images/pagination-bg.png); font-size: 16px;
-			}
-				#content #main .pagination p.prev a {
-					float: left; padding: 14px 0 0 46px;
-				}
-				#content #main .pagination p.next a {
-					float: right; text-align: right; padding: 14px 46px 0 0;
-					background-position: 0 -47px;
-				}
+#container #main .pagination {
+	margin: 0 0 60px 0; overflow: hidden;
+} 
+#container #main .pagination p {
+	margin: 0;
+}
 
-	#content #side {
-		width: 196px; float: left; margin: 0 0 0 37px;
-	}
+#container #main .pagination p a {
+	display: block; width: 102px; height: 33px; overflow: hidden;
+	background: url(../images/pagination-bg.png); font-size: 16px;
+}
+#container #main .pagination p.prev a {
+	float: left; padding: 14px 0 0 46px;
+}
+#container #main .pagination p.next a {
+	float: right; text-align: right; padding: 14px 46px 0 0;
+	background-position: 0 -47px;
+}
+
+#container #side {
+	width: 196px; float: left; margin: 0 0 0 37px;
+}
 	
-		#content #side h3 {
-			font: 22px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; text-align: center; text-shadow: 0px 1px 0px #fff;
-			background: url(images/underline.png) bottom repeat-x; padding: 0 0 15px 0; margin: 0 0 20px 0;
-		}
+#container #side h3 {
+	font: 22px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; text-align: center; text-shadow: 0px 1px 0px #fff;
+	background: url(../images/underline.png) bottom repeat-x; padding: 0 0 15px 0; margin: 0 0 20px 0;
+}
 	
-		#content #side #categories {
-			margin: 0 0 66px 0;
-		}
-			#content #side #categories ul {
-				list-style: none;
-			}
-				#content #side #categories ul li {
-					position: relative; width: 156px; height: 29px; padding: 11px 20px 0 20px; margin: 0 0 10px 0;
-					background: url(images/category-bg.png); font-size: 16px; text-align: right;
-					color: #afada2; text-shadow: 0px 1px 0px #fff;
-				}
-				#content #side #categories ul li a {
-					float: left; background: url(images/category-fill.png); padding: 0 10px 0 0; 
-				}
+#container #side #categories {
+	margin: 0 0 66px 0;
+}
+#container #side #categories ul {
+	list-style: none;
+}
+#container #side #categories ul li {
+	position: relative; width: 156px; height: 29px; padding: 11px 20px 0 20px; margin: 0 0 10px 0;
+	background: url(../images/category-bg.png); font-size: 16px; text-align: right;
+	color: #afada2; text-shadow: 0px 1px 0px #fff;
+}
+#container #side #categories ul li a {
+	float: left; background: url(../images/category-fill.png); padding: 0 10px 0 0; 
+}
 				
 	
 					
-		#content #side #my-sites {
-			margin: 0 0 66px 0;
-		}	
-			#content #side #my-sites dl dt {
-				font-size: 16px; padding: 0 0 0 26px;
-				background: url(images/favicons.png) no-repeat;
-			}			
-				#content #side #my-sites dl dt.bsg {
-					background-position: 0 1px;
-				}
-				#content #side #my-sites dl dt.l25 {
-					background-position: 0 -24px;
-				}
-				#content #side #my-sites dl dt.jakethelab {
-					background-position: 0 -51px;
-				}
-				#content #side #my-sites dl dt.spoongraphics {
-					background-position: 0 -76px;
-				}
-			
-				#content #side #my-sites dl dd {
-					font-size: 14px; color: #bcbbb5; margin: 0 0 10px 0;
-				}
+#container #side #my-sites {
+	margin: 0 0 66px 0;
+}	
+#container #side #my-sites dl dt {
+	font-size: 16px; padding: 0 0 0 26px;
+	background: url(../images/favicons.png) no-repeat;
+}			
+#container #side #my-sites dl dt.bsg {
+	background-position: 0 1px;
+}
+#container #side #my-sites dl dt.l25 {
+	background-position: 0 -24px;
+}
+#container #side #my-sites dl dt.jakethelab {
+	background-position: 0 -51px;
+}
+#container #side #my-sites dl dt.spoongraphics {
+	background-position: 0 -76px;
+}
+
+#container #side #my-sites dl dd {
+	font-size: 14px; color: #bcbbb5; margin: 0 0 10px 0;
+}
 
 #footer-container {
-	background: #2f2f28 url(images/footer-bg.png);
+	background: #2f2f28 url(../images/footer-bg.png);
 }	
 
 #footer {
 	width: 917px; margin: 0 auto; padding: 20px 22px 66px 22px; overflow: hidden;
 	
 }
-	#footer a {
-		color: #eeede6; text-decoration: none;
-	}
-		#footer a:hover {
-			color: #d0cfc8;
-		}
-	#footer h4 {
-		font: 22px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; margin: 0 0 14px 0;
-	}
+#footer a {
+	color: #eeede6; text-decoration: none;
+}
+#footer a:hover {
+	color: #d0cfc8;
+}
+#footer h4 {
+	font: 22px Tallys, Georgia, Serif; letter-spacing: 4px; color: #afada2; margin: 0 0 14px 0;
+}
 
-	#footer #tweet {
-		width: 897px; height: 39px; margin: 0 auto 38px auto; padding: 19px 10px 0 10px; 
-		background: url(images/twitter-bg.png) repeat-x;
-	}
-		#footer #tweet p#message {
-			float: left; color: #afada2; padding: 0 0 0 25px; font-size: 12px;
-			background: url(images/twitter-bubble.png) left 2px no-repeat;
-		}
-		#footer #tweet p#follow a {
-			float: right; display: block; width: 85px; height: 27px; margin: -3px 0 0 20px;
-			background: url(images/twitter-btn.png); text-indent: -9999px;
-		}
-			#footer #tweet p#follow a:hover {
-				background-position: bottom;
-			}
-	
-	
-	#footer #latest-posts {
-		width: 430px; float: left;
-	}
-		#footer #latest-posts ul {
-			list-style: none;
-		}	
-			#footer #latest-posts ul li {
-				font-size: 16px; margin: 0 0 27px 0;
-			}
-			
-			#footer #latest-posts ul li.subscribe {
-				margin: 0 0 10px 0;
-			}
-				#footer #latest-posts ul li.subscribe a {
-					display: block; height: 17px;
-					font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
-					padding: 0 0 0 27px; background: url(images/icons.png) left -16px no-repeat;
-				}
-					#footer #latest-posts ul li.subscribe a:hover {
-						color: #d0cfc8;
-					}
+#footer #tweet {
+	width: 897px; height: 39px; margin: 0 auto 38px auto; padding: 19px 10px 0 10px; 
+	background: url(../images/twitter-bg.png) repeat-x;
+}
+#footer #tweet p#message {
+	float: left; color: #afada2; padding: 0 0 0 25px; font-size: 12px;
+	background: url(../images/twitter-bubble.png) left 2px no-repeat;
+}
+#footer #tweet p#follow a {
+	float: right; display: block; width: 85px; height: 27px; margin: -3px 0 0 20px;
+	background: url(../images/twitter-btn.png); text-indent: -9999px;
+}
+#footer #tweet p#follow a:hover {
+	background-position: bottom;
+}
+
+
+#footer #latest-posts {
+	width: 430px; float: left;
+}
+#footer #latest-posts ul {
+	list-style: none;
+}	
+#footer #latest-posts ul li {
+	font-size: 16px; margin: 0 0 27px 0;
+}
+
+#footer #latest-posts ul li.subscribe {
+	margin: 0 0 10px 0;
+}
+#footer #latest-posts ul li.subscribe a {
+	display: block; height: 17px;
+	font: 13px Georgia, Serif; letter-spacing: 2px; color: #eeede6;
+	padding: 0 0 0 27px; background: url(../images/icons.png) left -16px no-repeat;
+}
+#footer #latest-posts ul li.subscribe a:hover {
+	color: #d0cfc8;
+}

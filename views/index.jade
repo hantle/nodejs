@@ -4,20 +4,21 @@ block content
   h1= title
   
   for post in postList
-    #main.post
-      h2
-        a(href="/post/#{post._id}") #{post.subject}
-      div#info
-        div.post-time
-          span #{moment(post.createdDate).format('LLL')}
-      ul.meta
-        li Posted in 
-          a(href="#") Vlog
-        li.comments
-          a(href="#") 5 Comments
-      div.post-content #{post.body}
-  .pagination
-    .prev
-      a(href="#") Older posts
-    .next
-      a(href="#") Newer posts
+    div#main
+     .post
+        h2
+          a(href="/post/#{post._id}") #{post.subject}
+        div#info
+          div.post-time
+            span #{moment(post.createdDate).format('LLL')}
+        ul.meta
+          li Posted in 
+            a(href="#") Vlog
+          li.comments
+            a(href="#") 5 Comments
+        div.post-content #{post.body}
+     .pagination
+       p.prev
+         a(href="#") Older posts
+       p.next
+         a(href="#") Newer posts
